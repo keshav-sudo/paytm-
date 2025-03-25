@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const db = async () => {
     try {
-        await mongoose.connect("", {
+        await mongoose.connect("mongodb+srv://thesharmakeshav:hxVHFIha7mP82lj9@cluster0.kegg0.mongodb.net/paytm", {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         unique: true,
-        maxlength: 15, // Fixed spelling (maxLength → maxlength)
+        maxlength: 20,//Fixed spelling (maxLength → maxlength)
         minlength: 5,  // Fixed spelling (minLength → minlength)
         lowercase: true,
         trim: true,
@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        maxlength: 10,
+       
         minlength: 6, // Fixed spelling (minLengh → minlength)
         required: true
     },

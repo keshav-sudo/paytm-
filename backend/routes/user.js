@@ -87,7 +87,7 @@ const updateBody = zod.object({
     lastname: zod.string().optional()
 });
 
-router.put("/", authMiddleware, async (req, res) => { // Fixed missing "/" in the route
+router.put("/update", authMiddleware, async (req, res) => { // Fixed missing "/" in the route
     const { success } = updateBody.safeParse(req.body);
     
     if (!success) {
